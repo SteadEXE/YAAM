@@ -53,6 +53,12 @@ class Updater {
             for (let uuid in Servers) {
                 if (Servers[uuid].managed) {
                     Servers[uuid].command('ServerChat Le serveur va redémarrer dans 5 minutes pour effectuer une mise à jour. Merci de votre compréhension.')
+                        .then(message => {
+                            Console.Log('RCON', message)
+                        })
+                        .catch(message => {
+                            Console.Log('RCON', message)
+                        })
                 }
             }
 
@@ -61,6 +67,12 @@ class Updater {
                 for (let uuid in Servers) {
                     if (Servers[uuid].managed) {
                         Servers[uuid].command('DoExit')
+                            .then(message => {
+                                Console.Log('RCON', message)
+                            })
+                            .catch(message => {
+                                Console.Log('RCON', message)
+                            })
                     }
                 }
 
@@ -71,6 +83,7 @@ class Updater {
 
     async check () {
         let updated = await this.update()
+        this.restartServers()
 
         if (updated) {
             await this.restartServers()

@@ -139,16 +139,13 @@ class Server {
             rcon.authenticate(this.rconPassword)
                 .then(() => {
                     rcon.execute(command).then(() => {
-                        Console.Log('RCON', this.ip + ':' + this.rconPort + ' [OK] >> ' + command)
-                        resolve()
+                        resolve(`[${this.ip}:${this.port} OK] ${command}`)
                     }).catch(() => {
-                        Console.Log('RCON', this.ip + ':' + this.rconPort + ' [FAIL] >> ' + command)
-                        reject()
+                        reject(`[${this.ip}:${this.port} ERR] ${command}`)
                     })
                 })
                 .catch((err) => {
-                    Console.Log('RCON', 'Auth failed on server: ' + err)
-                    reject()
+                    reject(`[${this.ip}:${this.port} AUTH] ${err}`)
                 })
         })
     }
