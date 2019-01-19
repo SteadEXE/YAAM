@@ -38,7 +38,8 @@
                 if (this.logs !== data) {
                     this.logs = data
 
-                    document.querySelector('#updater-logs').scrollTop = document.querySelector('#updater-logs').scrollHeight
+                    const $logs = document.querySelector('#updater-logs')
+                    $logs.scrollTop = $logs.scrollHeight
                 }
 
                 this.busy = false
@@ -55,5 +56,6 @@
         padding: 5px;
         border: none;
         font-family: monospace;
+        overflow-y: scroll
     }
 </style>
