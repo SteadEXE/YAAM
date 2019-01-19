@@ -1,0 +1,12 @@
+
+\.idea/
+
+back/node_modules/
+
+back/config/
+
+back/package-lock\.json
+
+ui/node_modules/
+
+ui/package-lock\.json

@@ -1,0 +1,25 @@
+{
+  "name": "@steadexe/yaam-ui",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.2.1",
+    "vue": "^2.5.21",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-service": "^3.1.4",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "description": "## Project setup ``` npm install ```",
+  "main": "src/main.js",
+  "author": "SteadEXE",
+  "license": "ISC"
+}
