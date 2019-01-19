@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-sm-8 offset-2">
+        <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-12">
             <div class="card">
                 <div class="card-header bg-primary text-light">
                     <i class="fa fa-server mr-2"></i> Servers
