@@ -83,7 +83,6 @@ class Updater {
 
     async check () {
         let updated = await this.update()
-        this.restartServers()
 
         if (updated) {
             await this.restartServers()
