@@ -16,7 +16,7 @@ class UpdaterController {
         }
 
         Config.get('updater')
-            .set('enabled', req.body.enabled)
+            .set('enabled', req.body.enabled === 'true')
             .set('interval', req.body.interval)
             .set('steam', req.body.steam)
             .write()

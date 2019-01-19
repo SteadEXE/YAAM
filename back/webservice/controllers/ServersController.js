@@ -30,7 +30,7 @@ class ServersController {
                 rconPort: req.body.rconPort,
                 parameters: req.body.parameters,
                 extraParameters: req.body.extraParameters,
-                managed: req.body.managed
+                managed: req.body.managed === 'true'
             })
             .write()
 
@@ -78,7 +78,7 @@ class ServersController {
             .set('rconPassword', req.body.rconPassword)
             .set('parameters', req.body.parameters)
             .set('extraParameters', req.body.extraParameters)
-            .set('managed', req.body.managed)
+            .set('managed', req.body.managed === 'true')
             .write()
 
         const configuration = Config.get('servers')
