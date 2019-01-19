@@ -16,11 +16,17 @@
         data () {
             return {
                 busy: true,
-                logs: ''
+                logs: '',
+                timer: null
             }
         },
         beforeMount () {
             this.update()
+        },
+        beforeDestroy () {
+            if (this.timer) {
+                clearTimeout(this.timer)
+            }
         },
         methods: {
             async update () {
@@ -36,8 +42,7 @@
                 }
 
                 this.busy = false
-
-                setTimeout(this.update.bind(this), 1000)
+                this.timer = setTimeout(this.update.bind(this), 1000)
             }
         }
     }
