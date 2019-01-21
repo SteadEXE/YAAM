@@ -12,7 +12,6 @@
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">IP</th>
-                                <th scope="col">Port / QueryPort</th>
                                 <th scope="col">Players</th>
                                 <th scope="col">Status</th>
                                 <th scope="col"></th>
@@ -22,7 +21,6 @@
                             <tr v-for="server in servers">
                                 <td>{{ server.name }}</td>
                                 <td>{{ server.ip }}</td>
-                                <td>{{ server.port }} / {{ server.queryPort }}</td>
                                 <td>{{ server.players }} / {{ server.maxPlayers }}</td>
                                 <td>
                                     <span class="badge badge-success" v-if="server.status === 'online'">Online</span>

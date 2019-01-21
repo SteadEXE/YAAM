@@ -24,7 +24,6 @@ class ServersController {
             .push({
                 id: id,
                 ip: req.body.ip,
-                port: req.body.port,
                 queryPort: req.body.queryPort,
                 rconPassword: req.body.rconPassword,
                 rconPort: req.body.rconPort,
@@ -72,7 +71,6 @@ class ServersController {
         Config.get('servers')
             .find({ id: req.params.uuid })
             .set('ip', req.body.ip)
-            .set('port', req.body.port)
             .set('queryPort', req.body.queryPort)
             .set('rconPort', req.body.rconPort)
             .set('rconPassword', req.body.rconPassword)

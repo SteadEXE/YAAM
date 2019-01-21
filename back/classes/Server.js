@@ -8,7 +8,6 @@ class Server {
     constructor (id) {
         this._id = id
         this._ip = ''
-        this._port = ''
         this._queryPort = ''
         this._rconPort = ''
         this._rconPassword = ''
@@ -31,7 +30,6 @@ class Server {
         const serverData = Config.get('servers').find({ id: this.id }).value()
 
         this.ip = serverData.ip
-        this.port = serverData.port
         this.queryPort = serverData.queryPort
         this.parameters = serverData.parameters
         this.rconPort = serverData.rconPort
@@ -155,7 +153,6 @@ class Server {
             id: this.id,
             name: this.name,
             ip: this.ip,
-            port: this.port,
             queryPort: this.queryPort,
             players: this.players,
             maxPlayers: this.maxPlayers,
@@ -185,22 +182,6 @@ class Server {
 
     set ip(value) {
         this._ip = value;
-    }
-
-    get port() {
-        return this._port;
-    }
-
-    set port(value) {
-        this._port = value;
-    }
-
-    get homeServer() {
-        return this._homeServer;
-    }
-
-    set homeServer(value) {
-        this._homeServer = value;
     }
 
     get rconPort() {

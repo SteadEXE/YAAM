@@ -17,23 +17,12 @@
                                     <input type="text" class="form-control" id="ip" placeholder="127.0.0.1" v-model="ip">
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="query-port">
                                         <i class="fas fa-satellite-dish mr-1"></i> Query port¹
                                     </label>
                                     <input type="number" class="form-control" id="query-port" placeholder="57555" v-model="queryPort">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="port">
-                                        <i class="fas fa-satellite-dish mr-1"></i> Port¹
-                                    </label>
-                                    <input type="number" class="form-control" id="port" placeholder="5555" v-model="port">
                                 </div>
                             </div>
                         </div>
@@ -113,7 +102,6 @@
             return {
                 busy: true,
                 ip: '',
-                port: '',
                 queryPort: '',
                 rconPort: '',
                 rconPassword: '',
@@ -132,7 +120,6 @@
 
                 let response = await axios.post('/api/servers/' + this.$route.params.uuid + '/update', {
                     ip: this.ip,
-                    port: this.port,
                     queryPort: this.queryPort,
                     rconPort: this.rconPort,
                     rconPassword: this.rconPassword,
@@ -149,7 +136,6 @@
                 }
 
                 this.ip = data.payload.ip
-                this.port = data.payload.port
                 this.queryPort = data.payload.queryPort
                 this.rconPort = data.payload.rconPort
                 this.rconPassword = data.payload.rconPassword
@@ -169,7 +155,6 @@
                 }
 
                 this.ip = data.payload.ip
-                this.port = data.payload.port
                 this.queryPort = data.payload.queryPort
                 this.rconPort = data.payload.rconPort
                 this.rconPassword = data.payload.rconPassword
