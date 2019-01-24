@@ -35,14 +35,14 @@ class Updater {
             })
 
             steamcmd.on('close', () => {
-                if (output.indexOf("Success! App '1006030' already up to date.") > -1) {
-                    Console.Log('UPDATER', 'Server is already up to date.')
-
-                    resolve(false)
-                } else if (output.indexOf("Success! App '1006030' fully installed.") > -1) {
+                if (output.indexOf("Success! App '1006030' fully installed.") > -1) {
                     Console.Log('UPDATER', 'Server successfully updated.')
 
                     resolve(true)
+                } else {
+                    Console.Log('UPDATER', 'Server is already up to date.')
+
+                    resolve(false)
                 }
             })
         })
